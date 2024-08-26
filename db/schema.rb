@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_08_20_170703) do
+ActiveRecord::Schema[8.0].define(version: 2024_08_26_201811) do
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
@@ -19,7 +19,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_08_20_170703) do
   end
 
   create_table "boosts", force: :cascade do |t|
-    t.string "content"
+    t.string "body"
     t.integer "creator_id", null: false
     t.integer "splat_id", null: false
     t.datetime "created_at", null: false
