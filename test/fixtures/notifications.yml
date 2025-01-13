@@ -11,7 +11,7 @@ layout_created_kevin:
   user: kevin
   creator: david
   bubble: logo
-  resource: layout (Bubble)
+  resource: layout_overflowing_david (Comment)
   read: false
-  body: "created: Layout is broken"
+  body: "re: Layout is broken"
   created_at: <%= 1.week.ago %>
