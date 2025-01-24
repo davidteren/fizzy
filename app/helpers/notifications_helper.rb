@@ -25,6 +25,12 @@ module NotificationsHelper
       data: { turbo_frame: "_top" }, &
   end
 
+  def notifications_next_page_link(page)
+    unless @page.last?
+      tag.div id: "next_page", data: { controller: "fetch-on-visible", fetch_on_visible_url_value: notifications_path(page: @page.next_param) }
+    end
+  end
+
   private
     def notification_event_action(notification)
       if notification_is_for_initial_assignement?(notification)

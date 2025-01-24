@@ -157,6 +157,9 @@ GEM
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
+    geared_pagination (1.2.0)
+      activesupport (>= 5.0)
+      addressable (>= 2.5.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
     hotwire-spark (0.1.12)
@@ -397,6 +400,7 @@ DEPENDENCIES
   brakeman
   capybara
   debug
+  geared_pagination (~> 1.2)
   hotwire-spark
   hotwire_combobox!
   importmap-rails

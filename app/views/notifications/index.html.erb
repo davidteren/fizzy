@@ -29,9 +29,11 @@
   <% end %>
 </section>
 
-<% if @read.any? %>
-  <section class="notificiations-list--read panel center borderless unpad flex flex-column gap-half margin-block-start-double">
+<% if @page.records.any? %>
+  <section id="notifications_list_read" class="notificiations-list--read panel center borderless unpad flex flex-column gap-half margin-block-start-double">
     <h2 class="txt-small margin-block-start-double margin-block-end-half txt-uppercase">Previously seen</h2>
-    <%= render @read %>
+    <%= render @page.records %>
   </section>
+
+  <%= notifications_next_page_link(@page) %>
 <% end %>

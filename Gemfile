@@ -22,6 +22,7 @@ gem "thruster", require: false
 
 # Features
 gem "bcrypt", "~> 3.1.7"
+gem "geared_pagination", "~> 1.2"
 gem "rqrcode"
 gem "redcarpet"
 gem "rouge"
