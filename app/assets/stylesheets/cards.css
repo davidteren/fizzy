@@ -106,7 +106,11 @@
   position: relative;
   z-index: 0;
 
-  .btn {
+  &:has(dialog[open]) {
+    z-index: 1;
+  }
+
+  .btn:not(.popup__item, .btn--plain) {
     --btn-background: var(--bubble-color);
     --btn-color: var(--color-ink-reversed);
   }
@@ -353,6 +357,10 @@
   .separator {
     height: calc(2lh + 2ex);
   }
+}
+
+.card__move-button {
+  --btn-background: color-mix(in srgb, var(--bubble-color) 40%, var(--color-ink));
 }
 
 .card__stages {
