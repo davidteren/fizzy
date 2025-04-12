@@ -19,13 +19,14 @@ class Cards::CommentsController < ApplicationController
   end
 
   def destroy
-    @comment.destroy
+    @message.destroy
     redirect_to @card
   end
 
   private
     def set_comment
       @comment = @card.comments.find(params[:id])
+      @message = @comment.message
     end
 
     def ensure_creatorship
