@@ -11,16 +11,7 @@
     <div class="center events">
       <%= render_column_headers(day_timeline) %>
       <%= render_event_grid_cells %>
-
-      <% day_timeline.events.group_by { it.created_at.hour }.each do |hour, events| %>
-        <% events.group_by { event_column(it) }.each do |column, events| %>
-          <%= event_cluster_tag(hour, column) do %>
-            <%= render partial: "events/event", collection: events %>
-
-            <%= local_datetime_tag events.first.created_at, class: "event__timestamp txt-small translucent" %>
-          <% end %>
-        <% end %>
-      <% end %>
+      <%= render "events/day_timeline", day_timeline: day_timeline  %>
     </div>
 
     <%= render "events/empty_days", day_timeline: day_timeline %>
