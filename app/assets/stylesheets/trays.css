@@ -60,12 +60,6 @@
         --tray-item-scale: 1;
 
         pointer-events: unset;
-
-        .card {
-          box-shadow: 0 0 0 1px var(--color-ink-lighter);
-          border: 0;
-          border-radius: 0;
-        }
       }
 
       .tray:has(.tray__item:only-child) & {
@@ -167,6 +161,19 @@
 
       block-size: var(--tray-item-height);
       view-transition-name: unset !important;
+
+      [open] & {
+        box-shadow: 0 0 0 1px var(--color-ink-lighter);
+        border: 0;
+        border-radius: 0;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        &,
+        [open] & {
+          box-shadow: 0 0 0 1px var(--color-ink-light);
+        }
+      }
     }
 
     .card__collection {
