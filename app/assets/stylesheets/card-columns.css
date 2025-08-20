@@ -131,10 +131,15 @@
     inset-block-start: 0;
     justify-content: center;
     margin-block-start: 1px;
-    margin-inline: -8px; /* enough to cover card shadows, but avoid overlapping bubbles */
+    margin-inline: calc(-1 * var(--cards-gap) - var(--reserved-bubble-space) - var(--main-padding)); /* cover bubbles and cards */
     padding-block: var(--cards-gap);
     position: sticky;
     z-index: 2;
+    background: gold !important;
+
+    @media (min-width: 640px) {
+      margin-inline: -8px; /* enough to cover card shadows, but avoid overlapping bubbles */
+    }
 
     &, .cards__filter {
       font-weight: bold;
