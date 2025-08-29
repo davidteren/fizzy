@@ -26,7 +26,7 @@ class User::Settings < ApplicationRecord
   private
     def review_pending_bundles
       if bundling_emails?
-        reschedule_pending_bundles
+        flush_pending_bundles
       else
         cancel_pending_bundles
       end
@@ -38,7 +38,7 @@ class User::Settings < ApplicationRecord
       end
     end
 
-    def reschedule_pending_bundles
+    def flush_pending_bundles
       user.notification_bundles.pending.find_each do |bundle|
         bundle.deliver_later
       end
