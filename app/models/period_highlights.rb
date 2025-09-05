@@ -1,4 +1,4 @@
-# Contains a summary for a given set of events. You create these summaries with a time window
+# Contains an AI-generated summary for a given set of events. You create these summaries with a time window
 # and a set of collections. We only store a key derived from the accessible events for those collections,
 # so that we reuse the same summary for users with different time zones or different accesses as long as the activity
 # is the same. This is important to keep AI costs down.
