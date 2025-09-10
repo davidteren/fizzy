@@ -27,7 +27,11 @@
     </div>
 
     <div>
-      <h2 class="margin-none">Signing secret</h2>
+      <%= @webhook.active ? "Active" : "Disabled" %>
+    </div>
+
+    <div>
+      <h2 class="margin-none">Secret</h2>
       <p>
         <b><%= @webhook.signing_secret %></b>
       </p>
