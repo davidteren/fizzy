@@ -1,6 +1,6 @@
 <% if collection = user_filtering.single_collection %>
   <div class="card card--new">
-    <%= button_to collection_cards_path(collection), method: :post, class: "btn", form: { data: { turbo_frame: "_top" } } do %>
+    <%= button_to collection_cards_path(collection), method: :post, class: "btn btn--link", form: { data: { turbo_frame: "_top" } } do %>
       <%= icon_tag "add" %>
       <span>Add a card</span>
     <% end %>
