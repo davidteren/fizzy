@@ -2,10 +2,10 @@ require "test_helper"
 
 class User::AccessorTest < ActiveSupport::TestCase
   test "new users get added to all_access collections on creation" do
-    regular_user = User.create!(name: "Jorge", email_address: "testregular@example.com", password: "secret123456")
+    user = User.create!(name: "Jorge", email_address: "testregular@example.com", password: "secret123456")
 
-    assert_includes regular_user.collections, collections(:writebook)
-    assert_equal Collection.all_access.count, regular_user.collections.count
+    assert_includes user.collections, collections(:writebook)
+    assert_equal Collection.all_access.count, user.collections.count
   end
 
   test "system user does not get added to collections on creation" do
