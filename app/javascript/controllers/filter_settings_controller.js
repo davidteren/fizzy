@@ -26,11 +26,12 @@ export default class extends Controller {
     if (!value) return false
 
     const defaultValue = this.#defaultValueForField(field)
+    console.debug("defaultValue", defaultValue);
     return defaultValue ? value !== defaultValue : true
   }
 
   #defaultValueForField(field) {
-    const comboboxContainer = field.closest("[data-combobox-default-value]")
-    return comboboxContainer?.dataset?.comboboxDefaultValue
+    const comboboxContainer = field.closest("[data-combobox-default-value-value]")
+    return comboboxContainer?.dataset?.comboboxDefaultValueValue
   }
 }

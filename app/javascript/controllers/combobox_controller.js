@@ -24,12 +24,10 @@ export default class extends Controller {
 
   get #selectedLabel() {
     const selectedValue = this.#selectedItemValue()
-    console.debug("Es ", this.defaultValueValue);
+
     if (this.hasDefaultLabelValue && (selectedValue === this.defaultValueValue || !selectedValue)) {
       return this.defaultLabelValue
     }
-
-    console.debug("EIN", this.#selectedItem);
 
     return this.#selectedItem?.dataset?.comboboxLabel || ""
   }
