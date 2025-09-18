@@ -1,14 +1,24 @@
 import { Controller } from "@hotwired/stimulus"
+import { debounce } from "helpers/timing_helpers";
 
 export default class extends Controller {
   static classes = ["filtersSet"]
   static targets = ["field"]
 
-  async connect() {
+  initialize() {
+    this.debouncedChange = debounce(this.change.bind(this), 50)
+  }
+
+  connect() {
+    this.change()
+  }
+
+  change() {
+    this.#toggleFiltersSetClass()
   }
 
   async fieldTargetConnected(field) {
-    this.#toggleFiltersSetClass(this.#isFieldSet(field))
+    this.debouncedChange()
   }
 
   #toggleFiltersSetClass(shouldAdd) {
@@ -21,6 +31,7 @@ export default class extends Controller {
 
   #isFieldSet(field) {
     const value = field.value?.trim()
+
     if (!value) return false
 
     const defaultValue = this.#defaultValueForField(field)
