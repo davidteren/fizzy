@@ -17,8 +17,6 @@ export default class extends Controller {
     }
   }
 
-  // Private methods
-
   #expandOnly(clickedColumn) {
     const wasCollapsed = this.#isCollapsed(clickedColumn)
 
