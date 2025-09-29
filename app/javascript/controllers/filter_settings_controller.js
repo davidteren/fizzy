@@ -20,14 +20,6 @@ export default class extends Controller {
     this.#refreshSaveToggleButton()
   }
 
-  resetIfBlankAndNoFiltering(event) {
-    const { target } = event
-    if (!target.value.trim() && !this.#hasFiltersSet) {
-      this.#showNoFilteringUrl();
-      event.stopImmediatePropagation()
-    }
-  }
-
   resetIfNoFiltering(event) {
     if (!this.#hasFiltersSet) {
       this.#showNoFilteringUrl()
