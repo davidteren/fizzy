@@ -161,8 +161,6 @@ Rails.application.routes.draw do
   namespace :public do
     resources :collections do
       scope module: :collections do
-        resources :card_previews
-
         namespace :columns do
           resource :not_now, only: :show
           resource :stream, only: :show

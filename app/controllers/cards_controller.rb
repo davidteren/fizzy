@@ -4,8 +4,6 @@ class CardsController < ApplicationController
   before_action :set_collection, only: %i[ create ]
   before_action :set_card, only: %i[ show edit update destroy ]
 
-  PAGE_SIZE = 25
-
   def index
     set_page_and_extract_portion_from @filter.cards
   end
